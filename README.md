@@ -148,7 +148,7 @@ FROM productos;
 
 ## 🧠 Ejercicios recomendados
 
-1. Crear una tabla de productos con especificaciones en JSONB.
+1. Crear una tabla de productos con especificaciones en JSONB.    
 2. Insertar al menos 5 productos con diferentes atributos.
 3. Consultar productos por color, tamaño o categoría.
 4. Crear índices GIN y medir el rendimiento.
@@ -156,37 +156,37 @@ FROM productos;
 
  ## Ejercicios básicos de HSTORE
 
-1. Crear una tabla con columna HSTORE
+1. Crear una tabla con columna HSTORE     
   Define una tabla productos con atributos como marca, color, peso.
-2. Insertar registros con múltiples pares clave-valor
+2. Insertar registros con múltiples pares clave-valor    
   Inserta al menos 5 productos con diferentes combinaciones de atributos.
-3. Consultar por una clave específica
+3. Consultar por una clave específica     
   Encuentra todos los productos cuyo atributo color sea "rojo".
-4. Actualizar un valor dentro del HSTORE
+4. Actualizar un valor dentro del HSTORE     
   Cambia el valor de peso para un producto específico.
-5. Eliminar una clave de un registro
+5. Eliminar una clave de un registro     
   Elimina el atributo color de un producto.
 
 ## 🔍 Ejercicios intermedios
-1. Filtrar registros que contienen una clave
+1. Filtrar registros que contienen una clave     
   Usa el operador ? para encontrar productos que tengan el atributo marca.
-2. Combinar HSTORE con otras columnas
+2. Combinar HSTORE con otras columnas     
   Consulta productos que tengan marca = 'Sony' y precio > 500.
-3. Extraer todas las claves y valores
+3. Extraer todas las claves y valores     
   Usa skeys() y svals() para listar todos los atributos de cada producto.
-4. Contar cuántos productos tienen un atributo específico
+4. Contar cuántos productos tienen un atributo específico     
   ¿Cuántos productos tienen el atributo color?
 
 ## 🧠 Ejercicios avanzados
-1. Indexar la columna HSTORE con GIN
+1. Indexar la columna HSTORE con GIN     
   Crea un índice para mejorar el rendimiento de búsquedas por clave.
-2. Usar funciones agregadas con HSTORE
+2. Usar funciones agregadas con HSTORE     
   Agrupa productos por marca y cuenta cuántos hay por cada una.
-3. Convertir HSTORE a JSON y viceversa
+3. Convertir HSTORE a JSON y viceversa     
   Practica con hstore_to_json() y json_to_hstore() si tienes datos mixtos.
-4. Validar existencia de múltiples claves
+4. Validar existencia de múltiples claves     
   Usa ?& para verificar si un producto tiene tanto color como peso.
-9. Crear una función que reciba un HSTORE y devuelva un resumen
+9. Crear una función que reciba un HSTORE y devuelva un resumen    
   Por ejemplo, una función que devuelva "Producto X: marca=Y, color=Z".
 
 ---
