@@ -15,15 +15,14 @@ def run_query(query):
             cur.execute(query)
             return cur.fetchall()
 
-def test_nombre_ana():
-    result = run_query("SELECT data->>'nombre' FROM usuarios WHERE id = 1;")
-    print(f'resultado del query: {result}')
-    assert result[0][0] == "Ana"
+def test_marca_laptop():
+    result = run_query("SELECT atributos -> 'marca' FROM productos WHERE nombre = 'Laptop';")
+    assert result[0][0] == "Dell"
 
-def test_usuario_activo():
-    result = run_query("SELECT data->>'activo' FROM usuarios WHERE id = 1;")
-    assert result[0][0] == "true"
+def test_color_telefono():
+    result = run_query("SELECT atributos -> 'color' FROM productos WHERE nombre = 'Teléfono';")
+    assert result[0][0] == "Negro"
 
-def test_edad_juan():
-    result = run_query("SELECT data->>'edad' FROM usuarios WHERE id = 2;")
-    assert result[0][0] == "25"
+def test_ram_laptop():
+    result = run_query("SELECT atributos -> 'ram' FROM productos WHERE nombre = 'Laptop';")
+    assert result[0][0] == "16GB"
