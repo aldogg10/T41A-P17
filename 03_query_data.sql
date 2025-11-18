@@ -1,8 +1,14 @@
-SELECT data->>'nombre' AS nombre
-FROM usuarios
-WHERE data->>'activo' = 'true';
+SELECT nombre
+FROM productos
+WHERE atributos -> 'color' = 'negro';
 
-CREATE INDEX idx_data_gin ON usuarios USING GIN (data);
+UPDATE productos
+SET atributos = atributos || 'ram => 32GB'
+WHERE nombre = 'Laptop';
 
-SELECT * FROM usuarios
-WHERE data @> '{"activo": true}';
+UPDATE productos
+SET atributos = delete(atributos, 'color')
+WHERE nombre = 'Teléfono';
+
+SELECT skeys(atributos) AS clave, svals(atributos) AS valor
+FROM productos;
